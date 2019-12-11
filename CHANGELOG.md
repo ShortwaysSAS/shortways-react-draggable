@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< HEAD
 ### 4.2.0 (Dec 2, 2019)
 
 - Fix: Apply `scale` parameter also while dragging an element. [#438](https://github.com/mzabriskie/react-draggable/pull/438)
@@ -120,6 +121,9 @@
 - Internal: Upgraded dependencies.
 
 ### 2.2.6 (Apr 30, 2017)
+=======
+### 2.2.6
+>>>>>>> parent of 3a2865e... release v3.0.0
 
 - Bugfix: Missing export default on TS definition (thanks @lostfictions)
 - Internal: TS test suite (thanks @lostfictions)
