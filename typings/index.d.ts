@@ -1,4 +1,4 @@
-declare module 'react-draggable' {
+declare module 'shortways-react-draggable' {
   import * as React from 'react';
 
   export interface DraggableBounds {
