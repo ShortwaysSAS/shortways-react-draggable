@@ -54,10 +54,10 @@ function getBoundPosition(draggable
     var boundNodeStyle = ownerWindow.getComputedStyle(boundNode); // Compute bounds. This is a pain with padding and offsets but this gets it exactly right.
 
     bounds = {
-      left: node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingLeft) - (0, _shims.int)(nodeStyle.marginLeft),
-      top: node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingTop) - (0, _shims.int)(nodeStyle.marginTop),
-      right: -(0, _domFns.innerWidth)(boundNode) + (0, _domFns.outerWidth)(node) + node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingRight) + (0, _shims.int)(nodeStyle.marginRight),
-      bottom: -(0, _domFns.innerHeight)(boundNode) + (0, _domFns.outerHeight)(node) + node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingBottom) + (0, _shims.int)(nodeStyle.marginBottom)
+      left: node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingLeft) - (0, _shims.int)(nodeStyle.marginLeft) - (0, _domFns.outerWidth)(node),
+      top: node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingTop) - (0, _shims.int)(nodeStyle.marginTop) - (0, _domFns.outerHeight)(node),
+      right: -(0, _domFns.innerWidth)(boundNode) + node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingRight) + (0, _shims.int)(nodeStyle.marginRight),
+      bottom: -(0, _domFns.innerHeight)(boundNode) + node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingBottom) + (0, _shims.int)(nodeStyle.marginBottom)
     };
   } // Keep x and y below right and bottom limits...
 
