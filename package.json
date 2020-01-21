@@ -35,12 +35,12 @@
   "author": "Matt Zabriskie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mzabriskie/react-draggable/issues"
+    "url": "https://github.com/ShortwaysSAS/shortways-react-draggable/issues"
   },
-  "homepage": "https://github.com/mzabriskie/react-draggable",
+  "homepage": "https://github.com/ShortwaysSAS/shortways-react-draggable",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.5.5",
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-transform-flow-comments": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
