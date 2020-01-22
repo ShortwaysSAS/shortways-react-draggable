@@ -1,5 +1,5 @@
 {
-  "name": "react-draggable",
+  "name": "shortways-react-draggable",
   "version": "2.2.6",
   "description": "React draggable component",
   "main": "build/cjs/cjs.js",
