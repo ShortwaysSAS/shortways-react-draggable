@@ -1,7 +1,7 @@
 {
-  "name": "shortways-react-draggable",
+  "name": "react-draggable",
   "version": "2.2.6",
-  "homepage": "https://github.com/mzabriskie/shortways-react-draggable",
+  "homepage": "https://github.com/mzabriskie/react-draggable",
   "authors": [
     "Matt Zabriskie",
     "Samuel Reed"

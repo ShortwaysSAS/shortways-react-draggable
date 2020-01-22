@@ -619,22 +619,21 @@ function getBoundPosition(draggable /*: Draggable*/, x /*: number*/, y /*: numbe
     var nodeStyle = ownerWindow.getComputedStyle(node);
     var boundNodeStyle = ownerWindow.getComputedStyle(boundNode);
     // Compute bounds. This is a pain with padding and offsets but this gets it exactly right.
-    // WARNING! Since S#6923 all properties are mirrored since the anchor is now bottom right instead of top left (left is right, top is bottom etc.).
     bounds = {
-      left: node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingLeft) - (0, _shims.int)(nodeStyle.marginLeft) - (0, _domFns.outerWidth)(node),
-      top: node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingTop) - (0, _shims.int)(nodeStyle.marginTop) - (0, _domFns.outerHeight)(node),
-      right: - (0, _domFns.innerWidth)(boundNode) + node.offsetLeft - (0, _shims.int)(boundNodeStyle.paddingRight) + (0, _shims.int)(nodeStyle.marginRight),
-      bottom: - (0, _domFns.innerHeight)(boundNode) + node.offsetTop - (0, _shims.int)(boundNodeStyle.paddingBottom) + (0, _shims.int)(nodeStyle.marginBottom)
+      left: -node.offsetLeft + (0, _shims.int)(boundNodeStyle.paddingLeft) + (0, _shims.int)(nodeStyle.marginLeft),
+      top: -node.offsetTop + (0, _shims.int)(boundNodeStyle.paddingTop) + (0, _shims.int)(nodeStyle.marginTop),
+      right: (0, _domFns.innerWidth)(boundNode) - (0, _domFns.outerWidth)(node) - node.offsetLeft + (0, _shims.int)(boundNodeStyle.paddingRight) - (0, _shims.int)(nodeStyle.marginRight),
+      bottom: (0, _domFns.innerHeight)(boundNode) - (0, _domFns.outerHeight)(node) - node.offsetTop + (0, _shims.int)(boundNodeStyle.paddingBottom) - (0, _shims.int)(nodeStyle.marginBottom)
     };
   }
 
   // Keep x and y below right and bottom limits...
-  if ((0, _shims.isNum)(bounds.right)) x = Math.max(x, bounds.right);
-  if ((0, _shims.isNum)(bounds.bottom)) y = Math.max(y, bounds.bottom);
+  if ((0, _shims.isNum)(bounds.right)) x = Math.min(x, bounds.right);
+  if ((0, _shims.isNum)(bounds.bottom)) y = Math.min(y, bounds.bottom);
 
   // But above left and top limits.
-  if ((0, _shims.isNum)(bounds.left)) x = Math.min(x, bounds.left);
-  if ((0, _shims.isNum)(bounds.top)) y = Math.min(y, bounds.top);
+  if ((0, _shims.isNum)(bounds.left)) x = Math.max(x, bounds.left);
+  if ((0, _shims.isNum)(bounds.top)) y = Math.max(y, bounds.top);
 
   return [x, y];
 }
