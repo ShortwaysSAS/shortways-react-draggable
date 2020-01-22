@@ -12,7 +12,7 @@ const transformStyle = browserPrefixToStyle('transform', getPrefix('transform'))
 const transformKey = browserPrefixToKey('transform', getPrefix('transform'));
 const userSelectStyle = browserPrefixToStyle('user-select', getPrefix('user-select'));
 
-describe('react-draggable', function () {
+describe('shortways-react-draggable', function () {
   var drag;
 
   // Remove body margin so offsetParent calculations work properly
