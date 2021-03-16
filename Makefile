@@ -25,9 +25,7 @@ build-esm: $(BIN)
 	env BABEL_MODULE_TYPE="module" BABEL_ES_COMPAT="6" $(BIN)/babel --out-dir ./build/module ./lib
 
 # Build used by Shortways Assistant.
-# WARNING: Due to an unknown build issue the minified file won't work, you need to manually modify it as such:
-# there are two functions with this format in the minified build => (e, t){...}(o.a.Component)
-# for the project to work properly modify them like this instead => (e, o.a.Component){...}()
+# direct command : "yarn webpack --mode=production --display-modules"
 build-web: $(BIN)
 	$(BIN)/webpack --mode=production --display-modules
 
