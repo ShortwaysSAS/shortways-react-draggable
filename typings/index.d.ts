@@ -38,7 +38,6 @@ declare module 'shortways-react-draggable' {
 
   export type Anchor = { isTop: boolean, isLeft: boolean };
   export type ControlPosition = {x: number, y: number, anchor: Anchor};
-  
   export type PositionOffsetControlPosition = {x: number|string, y: number|string};
 
   export interface DraggableCoreProps {
